@@ -43,7 +43,7 @@ Create an instance of `Acho` passing the question and the options. The options n
 let simulators = ["iPhone 10", "iPhone 7" ]
 let acho = Acho<String>()
 let simulator = acho.ask(question: "In which simulator would you like to run the app?",
-                         items: simulators)
+                         options: simulators)
 ```
 
 ![gif](assets/acho.gif)

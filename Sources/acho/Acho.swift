@@ -11,9 +11,9 @@ public protocol AchoProtocol {
     ///
     /// - Parameters:
     ///   - question: Question to be asked.
-    ///   - items: List of options
+    ///   - options: List of options
     /// - Returns: Selectd option (if any).
-    func ask(question: String, items: [C]) -> C?
+    func ask(question: String, options: [C]) -> C?
 }
 
 /// Public interface of the library.
@@ -24,11 +24,15 @@ public final class Acho<C: CustomStringConvertible & Hashable>: AchoProtocol {
     /// Key reader.
     let keyReader: KeyReading
 
+    /// Formatter instance.
+    let formatter: Formatting
+
     /// Public constructor that takes no arguments
     public convenience init() {
         let controller = TerminalController(stream: stdoutStream as! LocalFileOutputByteStream)!
         self.init(terminalController: controller,
-                  keyReader: KeyReader())
+                  keyReader: KeyReader(),
+                  formatter: Formatter())
     }
 
     /// Initialize the class with its attributes
@@ -37,9 +41,11 @@ public final class Acho<C: CustomStringConvertible & Hashable>: AchoProtocol {
     ///   - terminalController: Terminal controller.
     ///   - keyReader: Instance to subscribe to key events.
     init(terminalController: TerminalControlling,
-         keyReader: KeyReading) {
+         keyReader: KeyReading,
+         formatter: Formatting) {
         self.terminalController = terminalController
         self.keyReader = keyReader
+        self.formatter = formatter
     }
 
     /// Prints the question and the options in the terminal and subscribes to key events
@@ -48,29 +54,37 @@ public final class Acho<C: CustomStringConvertible & Hashable>: AchoProtocol {
     ///
     /// - Parameters:
     ///   - question: Question to be asked.
-    ///   - items: List of options
+    ///   - options: List of options.
     /// - Returns: Selectd option (if any).
-    public func ask(question: String, items: [C]) -> C? {
-        precondition(items.count > 1, "there should be at least one item")
+    public func ask(question: String, options: [C]) -> C? {
+        precondition(options.count > 1, "there should be at least one item")
 
-        let state = AchoState(question: question, items: items)
-        print(output: state.output(), first: true)
+        let state = State(options: options)
+
+        let output = state.output()
+        var printedLines: Int? = print(question, output: output)
         var selectedItem: C?
 
         keyReader.subscribe { event in
             switch event {
             case .down:
-                print(output: state.down())
+                state.down()
+                let output = state.output()
+                printedLines = self.print(question, output: output, printedLines: printedLines)
             case .up:
-                print(output: state.up())
+                state.up()
+                let output = state.output()
+                printedLines = self.print(question, output: output, printedLines: printedLines)
             case .select:
-                selectedItem = state.select()
+                selectedItem = state.current()
             case .exit:
                 break
             }
         }
 
-        clear(lines: items.count)
+        if let printedLines = printedLines {
+            clear(lines: printedLines)
+        }
         return selectedItem
     }
 
@@ -78,7 +92,7 @@ public final class Acho<C: CustomStringConvertible & Hashable>: AchoProtocol {
     ///
     /// - Parameter lines: Number of lines to be cleared.
     fileprivate func clear(lines: Int) {
-        for _ in 0 ... lines {
+        for _ in 0 ..< lines {
             terminalController.moveCursor(up: 1)
             terminalController.clearLine()
         }
@@ -87,15 +101,19 @@ public final class Acho<C: CustomStringConvertible & Hashable>: AchoProtocol {
     /// Prints the state output in the terminal.
     ///
     /// - Parameters:
-    ///   - output: Output to be printed.
-    ///   - first: True if it's the first print.
-    fileprivate func print(output: [String], first: Bool = false) {
-        if !first {
-            terminalController.moveCursor(up: output.count)
+    ///   - question: Question.
+    ///   - output: Output options.
+    ///   - printedLines: The number of currently printed lines.
+    /// - Returns: The number of lines that have been printed.
+    fileprivate func print(_ question: String, output: [(C, Bool)], printedLines: Int? = nil) -> Int {
+        if let printedLines = printedLines {
+            terminalController.moveCursor(up: printedLines)
         }
-        output.forEach({
+        let lines = formatter.format(question: question, options: output.map({ ($0.0.description, $0.1) }))
+        lines.forEach({
             terminalController.clearLine()
             terminalController.write("\($0)\n")
         })
+        return lines.count
     }
 }
