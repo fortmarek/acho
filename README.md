@@ -4,12 +4,12 @@ Acho is a Swift library to generate interactive CLI prompts.
 
 **Where does acho come from?** People from Murcia, the region where I'm from use acho a lot when speaking. It's a word that can be used for many things: grab someone's attention, ask or complain about something, tell someone not to do something anymore. Since I found a parallelism between one of the usages of the expression, and the goal of this library, asking the user for something, I thought it'd be the perfect name for the library.
 
-![CircleCI branch](https://img.shields.io/circleci/project/github/tuist/acho/master.svg)
-![Swift Package Manager](https://img.shields.io/badge/swift%20package%20manager-compatible-brightgreen.svg)
-![Release](https://img.shields.io/github/release/tuist/acho.svg)
-![Code Coverage](https://codecov.io/gh/xcodeswift/xcproj/branch/master/graph/badge.svg)
-![Slack](http://slack.tuist.io/badge.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![CircleCI](https://circleci.com/gh/tuist/acho.svg?style=svg)](https://circleci.com/gh/tuist/acho)
+[![Swift Package Manager](https://img.shields.io/badge/swift%20package%20manager-compatible-brightgreen.svg)](https://swift.org/package-manager/)
+[![Release](https://img.shields.io/github/release/tuist/acho.svg)](https://github.com/tuist/acho/releases)
+[![Code Coverage](https://codecov.io/gh/xcodeswift/xcproj/branch/master/graph/badge.svg)](https://codecov.io/gh/tuist/xcodeproj)
+[![Slack](http://slack.tuist.io/badge.svg)](http://slack.tuist.io/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/tuist/acho/blob/master/LICENSE.md)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/pepibumur)
 <img src="https://opencollective.com/tuistapp/tiers/backer/badge.svg?label=backer&color=brightgreen" />
 <img src="https://opencollective.com/tuistapp/tiers/sponsor/badge.svg?label=sponsor&color=brightgreen" />
