@@ -1,22 +1,22 @@
 import ColorizeSwift
 import Foundation
 
-/// State.
+/// It represents the state of the prompt.
 class AchoState<C: CustomStringConvertible & Hashable> {
-    /// Question.
+    /// Prompt question.
     let question: String
 
-    /// State items.
+    /// List of options the user can select from.
     let items: [C]
 
-    /// Selected index
+    /// Current index.
     private(set) var index: Int
 
     /// Initializes the state.
     ///
     /// - Parameters:
-    ///   - question: State question.
-    ///   - items: State items.
+    ///   - question: Prompt question.
+    ///   - items: List of options the user can select from.
     init(question: String,
          items: [C]) {
         self.question = question
@@ -24,10 +24,10 @@ class AchoState<C: CustomStringConvertible & Hashable> {
         index = 0
     }
 
-    /// Selects the item at the current index.
+    /// Selects the option at the current index.
     ///
-    /// - Returns: The item at the current index.
-    func enter() -> C {
+    /// - Returns: The option at the current index.
+    func select() -> C {
         return items[self.index]
     }
 
