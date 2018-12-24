@@ -7,7 +7,7 @@ Acho is a Swift library to generate interactive CLI prompts.
 [![CircleCI](https://circleci.com/gh/tuist/acho.svg?style=svg)](https://circleci.com/gh/tuist/acho)
 [![Swift Package Manager](https://img.shields.io/badge/swift%20package%20manager-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 [![Release](https://img.shields.io/github/release/tuist/acho.svg)](https://github.com/tuist/acho/releases)
-[![Code Coverage](https://codecov.io/gh/xcodeswift/xcproj/branch/master/graph/badge.svg)](https://codecov.io/gh/tuist/xcodeproj)
+[![Code Coverage](https://codecov.io/gh/tuist/acho/branch/master/graph/badge.svg)](https://codecov.io/gh/tuist/acho)
 [![Slack](http://slack.tuist.io/badge.svg)](http://slack.tuist.io/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/tuist/acho/blob/master/LICENSE.md)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/pepibumur)
