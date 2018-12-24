@@ -39,7 +39,7 @@ class KeyReader: KeyReading {
             } else if char == 0x0A { // enter
                 subscriber(.select)
                 break
-            } else if char == 0x04 { // detect EOF (Ctrl+D)
+            } else if char == 0x04 || char == 0x71 || char == 0x1B { // detect EOF (Ctrl+D)
                 subscriber(.exit)
                 break
             }
