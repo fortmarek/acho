@@ -1,23 +1,33 @@
 import Basic
 import Foundation
 
+/// Protocol that defines an interface to ask the user to choose an option from a given list.
+public protocol AchoProtocol {
+    associatedtype C
+
+    /// Prints the question and the options in the terminal and subscribes to key events
+    /// to move the selection up and down. When the user presses enter, it returns
+    /// the selected option.
+    ///
+    /// - Parameters:
+    ///   - question: Question to be asked.
+    ///   - items: List of options
+    /// - Returns: Selectd option (if any).
+    func ask(question: String, items: [C]) -> C?
+}
+
 /// Public interface of the library.
-public final class Acho<C: CustomStringConvertible & Hashable> {
+public final class Acho<C: CustomStringConvertible & Hashable>: AchoProtocol {
     /// Terminal controller.
     let terminalController: TerminalControlling
-
-    /// Acho state.
-    let state: AchoState<C>
 
     /// Key reader.
     let keyReader: KeyReading
 
     /// Public constructor that takes no arguments
-    public convenience init(question: String, items: [C]) {
-        precondition(items.count > 1, "there should be at least one item")
+    public convenience init() {
         let controller = TerminalController(stream: stdoutStream)!
         self.init(terminalController: controller,
-                  state: AchoState(question: question, items: items),
                   keyReader: KeyReader())
     }
 
@@ -25,12 +35,10 @@ public final class Acho<C: CustomStringConvertible & Hashable> {
     ///
     /// - Parameters:
     ///   - terminalController: Terminal controller.
-    ///   - state: State.
+    ///   - keyReader: Instance to subscribe to key events.
     init(terminalController: TerminalControlling,
-         state: AchoState<C>,
          keyReader: KeyReading) {
         self.terminalController = terminalController
-        self.state = state
         self.keyReader = keyReader
     }
 
@@ -38,8 +46,14 @@ public final class Acho<C: CustomStringConvertible & Hashable> {
     /// to move the selection up and down. When the user presses enter, it returns
     /// the selected option.
     ///
-    /// - Returns: Selected option (if any)
-    public func ask() -> C? {
+    /// - Parameters:
+    ///   - question: Question to be asked.
+    ///   - items: List of options
+    /// - Returns: Selectd option (if any).
+    public func ask(question: String, items: [C]) -> C? {
+        precondition(items.count > 1, "there should be at least one item")
+
+        let state = AchoState(question: question, items: items)
         state.output().forEach({ terminalController.write("\($0)\n") })
         var selectedItem: C?
 

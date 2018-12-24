@@ -10,12 +10,12 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "acho-cli",
-            dependencies: ["acho"]
-        ),
-        .target(
             name: "acho",
             dependencies: ["Utility", "ColorizeSwift"]
+        ),
+        .target(
+            name: "achoTesting",
+            dependencies: ["acho"]
         ),
         .testTarget(
             name: "achoTests",

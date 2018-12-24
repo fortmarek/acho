@@ -41,12 +41,24 @@ Create an instance of `Acho` passing the question and the options. The options n
 
 ```swift
 let simulators = ["iPhone 10", "iPhone 7" ]
-let acho = Acho(question: "In which simulator would you like to run the app?",
-                items: simulators)
-let simulator = acho.ask()
+let acho = Acho<String>()
+let simulator = acho.ask(question: "In which simulator would you like to run the app?",
+                         items: simulators)
 ```
 
 ![gif](assets/acho.gif)
+
+## Testing ✅
+
+Acho provides an `achoTesting` target that you can use to easily stub the interaction with the public interface:
+
+```swift
+import achoTesting
+
+let mock = MockAcho<String>()
+let simulators = ["iPhone 10", "iPhone 7" ]
+mock.stub(question: "In which simulator would you like to run the app?", items: simulators, with: "iPhone 7")
+```
 
 ## Setup for development 👩‍💻
 
