@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>Data Extension Reference</title>
+    <title>AchoProtocol Protocol Reference</title>
     <link rel='stylesheet' type='text/css' href='../css/jazzy.css' />
     <link rel='stylesheet' type='text/css' href='../css/highlight.css' />
     <meta charset='utf-8'>
@@ -10,9 +10,9 @@
   </head>
   <body>
 
-    <a name='//apple_ref/swift/Extension/Data' class='dashAnchor'></a>
+    <a name='//apple_ref/swift/Protocol/AchoProtocol' class='dashAnchor'></a>
 
-    <a title='Data Extension Reference'></a>
+    <a title='AchoProtocol Protocol Reference'></a>
 
     <header class='header'>
       <p class='header-col header-col--primary'>
@@ -34,7 +34,7 @@
     <p class='breadcrumbs'>
       <a class='breadcrumb' href='../index.html'>acho Reference</a>
       <img class='carat' src='' />
-      Data Extension Reference
+      AchoProtocol Protocol Reference
     </p>
 
     <div class='content-wrapper'>
@@ -93,14 +93,15 @@
 
         <section class='section'>
           <div class='section-content'>
-            <h1>Data</h1>
+            <h1>AchoProtocol</h1>
               <div class='declaration'>
                 <div class='language'>
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Data</span> <span class="p">:</span> <span class="kt">ReferenceConvertible</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">RandomAccessCollection</span><span class="p">,</span> <span class="kt">MutableCollection</span><span class="p">,</span> <span class="kt">RangeReplaceableCollection</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AchoProtocol</span></code></pre>
 
                 </div>
               </div>
-            
+            <p>Protocol that defines an interface to ask the user to choose an option from a given list.</p>
+
           </div>
         </section>
 
@@ -111,9 +112,9 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:10Foundation4DataV4achoE14hexDescriptionSSvp"></a>
-                    <a name="//apple_ref/swift/Property/hexDescription" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DataV4achoE14hexDescriptionSSvp">hexDescription</a>
+                    <a name="/s:4acho12AchoProtocolP3ask8question7options1CQzSgSS_SayAHGtF"></a>
+                    <a name="//apple_ref/swift/Method/ask(question:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho12AchoProtocolP3ask8question7options1CQzSgSS_SayAHGtF">ask(question:options:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -121,16 +122,53 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the hex representation of the data</p>
+                        <p>Prints the question and the options in the terminal and subscribes to key events
+to move the selection up and down. When the user presses enter, it returns
+the selected option.</p>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hexDescription</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">ask</span><span class="p">(</span><span class="nv">question</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">C</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">C</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>question</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Question to be asked.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>List of options</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h5>Return Value</h5>
+                        <p>Selectd option (if any).</p>
                       </div>
                       <div class="slightly-smaller">
                         

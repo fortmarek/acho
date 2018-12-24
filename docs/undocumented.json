@@ -1,6 +1,20 @@
 {
   "warnings": [
     {
+      "file": "/Users/pedropinera/src/github.com/tuist/acho/Sources/acho/Acho.swift",
+      "line": 6,
+      "symbol": "AchoProtocol.C",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pedropinera/src/github.com/tuist/acho/Sources/acho/Formatter.swift",
+      "line": 16,
+      "symbol": "Formatter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/pedropinera/src/github.com/tuist/acho/Sources/acho/KeyReader.swift",
       "line": 10,
       "symbol": "KeyEvent.up",

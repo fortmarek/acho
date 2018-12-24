@@ -18,7 +18,7 @@
         <a class='header-link' href='index.html'>
           acho Docs
         </a>
-         (83% documented)
+         (80% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -46,7 +46,7 @@
                 <a class='nav-group-task-link' href='Classes/Acho.html'>Acho</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='Classes/AchoState.html'>AchoState</a>
+                <a class='nav-group-task-link' href='Classes/State.html'>State</a>
               </li>
             </ul>
           </li>
@@ -72,6 +72,12 @@
           <li class='nav-group-name'>
             <a class='nav-group-name-link' href='Protocols.html'>Protocols</a>
             <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/AchoProtocol.html'>AchoProtocol</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/Formatting.html'>Formatting</a>
+              </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Protocols/KeyReading.html'>KeyReading</a>
               </li>
@@ -123,12 +129,21 @@
 
 <p>Create an instance of <code><a href="Classes/Acho.html">Acho</a></code> passing the question and the options. The options need to conform both the protocol <code>CustomStringConvertible</code> and <code>Hashable</code>:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">simulators</span> <span class="o">=</span> <span class="p">[</span><span class="s">"iPhone 10"</span><span class="p">,</span> <span class="s">"iPhone 7"</span> <span class="p">]</span>
-<span class="k">let</span> <span class="nv">acho</span> <span class="o">=</span> <span class="kt">Acho</span><span class="p">(</span><span class="nv">question</span><span class="p">:</span> <span class="s">"In which simulator would you like to run the app?"</span><span class="p">,</span>
-                <span class="nv">items</span><span class="p">:</span> <span class="n">simulators</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">simulator</span> <span class="o">=</span> <span class="n">acho</span><span class="o">.</span><span class="nf">ask</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">acho</span> <span class="o">=</span> <span class="kt">Acho</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">simulator</span> <span class="o">=</span> <span class="n">acho</span><span class="o">.</span><span class="nf">ask</span><span class="p">(</span><span class="nv">question</span><span class="p">:</span> <span class="s">"In which simulator would you like to run the app?"</span><span class="p">,</span>
+                         <span class="nv">options</span><span class="p">:</span> <span class="n">simulators</span><span class="p">)</span>
 </code></pre>
 
 <p><img src="assets/acho.gif" alt="gif"></p>
+<h2 id='testing' class='heading'>Testing ✅</h2>
+
+<p>Acho provides an <code>achoTesting</code> target that you can use to easily stub the interaction with the public interface:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="n">achoTesting</span>
+
+<span class="k">let</span> <span class="nv">mock</span> <span class="o">=</span> <span class="kt">MockAcho</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">simulators</span> <span class="o">=</span> <span class="p">[</span><span class="s">"iPhone 10"</span><span class="p">,</span> <span class="s">"iPhone 7"</span> <span class="p">]</span>
+<span class="n">mock</span><span class="o">.</span><span class="nf">stub</span><span class="p">(</span><span class="nv">question</span><span class="p">:</span> <span class="s">"In which simulator would you like to run the app?"</span><span class="p">,</span> <span class="nv">items</span><span class="p">:</span> <span class="n">simulators</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"iPhone 7"</span><span class="p">)</span>
+</code></pre>
 <h2 id='setup-for-development' class='heading'>Setup for development 👩‍💻</h2>
 
 <ol>

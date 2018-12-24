@@ -19,7 +19,7 @@
         <a class='header-link' href='../index.html'>
           acho Docs
         </a>
-         (83% documented)
+         (80% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -47,7 +47,7 @@
                 <a class='nav-group-task-link' href='../Classes/Acho.html'>Acho</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='../Classes/AchoState.html'>AchoState</a>
+                <a class='nav-group-task-link' href='../Classes/State.html'>State</a>
               </li>
             </ul>
           </li>
@@ -74,6 +74,12 @@
             <a class='nav-group-name-link' href='../Protocols.html'>Protocols</a>
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/AchoProtocol.html'>AchoProtocol</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/Formatting.html'>Formatting</a>
+              </li>
+              <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../Protocols/KeyReading.html'>KeyReading</a>
               </li>
               <li class='nav-group-task'>
@@ -90,7 +96,7 @@
             <h1>Acho</h1>
               <div class='declaration'>
                 <div class='language'>
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Acho</span><span class="o">&lt;</span><span class="kt">C</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">C</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">C</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Acho</span><span class="o">&lt;</span><span class="kt">C</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AchoProtocol.html">AchoProtocol</a></span> <span class="k">where</span> <span class="kt">C</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">C</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
@@ -136,36 +142,6 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:4acho4AchoC5stateAA0B5StateCyxGvp"></a>
-                    <a name="//apple_ref/swift/Property/state" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC5stateAA0B5StateCyxGvp">state</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Acho state.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h5>Declaration</h5>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AchoState.html">AchoState</a></span><span class="o">&lt;</span><span class="kt">C</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
                     <a name="/s:4acho4AchoC9keyReaderAA10KeyReading_pvp"></a>
                     <a name="//apple_ref/swift/Property/keyReader" class="dashAnchor"></a>
                     <a class="token" href="#/s:4acho4AchoC9keyReaderAA10KeyReading_pvp">keyReader</a>
@@ -196,9 +172,39 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:4acho4AchoC8question5itemsACyxGSS_SayxGtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(question:items:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC8question5itemsACyxGSS_SayxGtcfc">init(question:items:)</a>
+                    <a name="/s:4acho4AchoC9formatterAA10Formatting_pvp"></a>
+                    <a name="//apple_ref/swift/Property/formatter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho4AchoC9formatterAA10Formatting_pvp">formatter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Formatter instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">formatter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Formatting.html">Formatting</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:4acho4AchoCACyxGycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho4AchoCACyxGycfc">init()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -213,7 +219,7 @@
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">question</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">C</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -226,9 +232,9 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:4acho4AchoC18terminalController5state9keyReaderACyxGAA19TerminalControlling_p_AA0B5StateCyxGAA10KeyReading_ptcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(terminalController:state:keyReader:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC18terminalController5state9keyReaderACyxGAA19TerminalControlling_p_AA0B5StateCyxGAA10KeyReading_ptcfc">init(terminalController:state:keyReader:)</a>
+                    <a name="/s:4acho4AchoC18terminalController9keyReader9formatterACyxGAA19TerminalControlling_p_AA10KeyReading_pAA10Formatting_ptcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(terminalController:keyReader:formatter:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho4AchoC18terminalController9keyReader9formatterACyxGAA19TerminalControlling_p_AA10KeyReading_pAA10Formatting_ptcfc">init(terminalController:keyReader:formatter:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -244,8 +250,8 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">terminalController</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TerminalControlling.html">TerminalControlling</a></span><span class="p">,</span>
-     <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AchoState.html">AchoState</a></span><span class="o">&lt;</span><span class="kt">C</span><span class="o">&gt;</span><span class="p">,</span>
-     <span class="nv">keyReader</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KeyReading.html">KeyReading</a></span><span class="p">)</span></code></pre>
+     <span class="nv">keyReader</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KeyReading.html">KeyReading</a></span><span class="p">,</span>
+     <span class="nv">formatter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Formatting.html">Formatting</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -268,12 +274,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>state</em>
+                                <em>keyReader</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>State.</p>
+                                  <p>Instance to subscribe to key events.</p>
                                 </div>
                               </td>
                             </tr>
@@ -289,9 +295,9 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:4acho4AchoC3askxSgyF"></a>
-                    <a name="//apple_ref/swift/Method/ask()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC3askxSgyF">ask()</a>
+                    <a name="/s:4acho4AchoC3ask8question7optionsxSgSS_SayxGtF"></a>
+                    <a name="//apple_ref/swift/Method/ask(question:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho4AchoC3ask8question7optionsxSgSS_SayxGtF">ask(question:options:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -308,13 +314,44 @@ the selected option.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">ask</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">C</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">ask</span><span class="p">(</span><span class="nv">question</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">C</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">C</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>question</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Question to be asked.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>List of options.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
                         <h5>Return Value</h5>
-                        <p>Selected option (if any)</p>
+                        <p>Selectd option (if any).</p>
                       </div>
                       <div class="slightly-smaller">
                         

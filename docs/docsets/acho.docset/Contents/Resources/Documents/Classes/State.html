@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>Acho Class Reference</title>
+    <title>State Class Reference</title>
     <link rel='stylesheet' type='text/css' href='../css/jazzy.css' />
     <link rel='stylesheet' type='text/css' href='../css/highlight.css' />
     <meta charset='utf-8'>
@@ -10,9 +10,9 @@
   </head>
   <body>
 
-    <a name='//apple_ref/swift/Class/Acho' class='dashAnchor'></a>
+    <a name='//apple_ref/swift/Class/State' class='dashAnchor'></a>
 
-    <a title='Acho Class Reference'></a>
+    <a title='State Class Reference'></a>
 
     <header class='header'>
       <p class='header-col header-col--primary'>
@@ -34,7 +34,7 @@
     <p class='breadcrumbs'>
       <a class='breadcrumb' href='../index.html'>acho Reference</a>
       <img class='carat' src='' />
-      Acho Class Reference
+      State Class Reference
     </p>
 
     <div class='content-wrapper'>
@@ -93,14 +93,14 @@
 
         <section class='section'>
           <div class='section-content'>
-            <h1>Acho</h1>
+            <h1>State</h1>
               <div class='declaration'>
                 <div class='language'>
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Acho</span><span class="o">&lt;</span><span class="kt">C</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AchoProtocol.html">AchoProtocol</a></span> <span class="k">where</span> <span class="kt">C</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">C</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">State</span><span class="o">&lt;</span><span class="kt">C</span><span class="o">&gt;</span></code></pre>
 
                 </div>
               </div>
-            <p>Public interface of the library.</p>
+            <p>It represents the state of the prompt.</p>
 
           </div>
         </section>
@@ -112,9 +112,9 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:4acho4AchoC18terminalControllerAA19TerminalControlling_pvp"></a>
-                    <a name="//apple_ref/swift/Property/terminalController" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC18terminalControllerAA19TerminalControlling_pvp">terminalController</a>
+                    <a name="/s:4acho5StateC4spanSivp"></a>
+                    <a name="//apple_ref/swift/Property/span" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho5StateC4spanSivp">span</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -122,14 +122,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Terminal controller.</p>
+                        <p>Amount of elements shown</p>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">terminalController</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TerminalControlling.html">TerminalControlling</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">span</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -142,9 +142,9 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:4acho4AchoC9keyReaderAA10KeyReading_pvp"></a>
-                    <a name="//apple_ref/swift/Property/keyReader" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC9keyReaderAA10KeyReading_pvp">keyReader</a>
+                    <a name="/s:4acho5StateC12currentIndexSivp"></a>
+                    <a name="//apple_ref/swift/Property/currentIndex" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho5StateC12currentIndexSivp">currentIndex</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -152,14 +152,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Key reader.</p>
+                        <p>Current index.</p>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">keyReader</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KeyReading.html">KeyReading</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">currentIndex</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -172,9 +172,9 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:4acho4AchoC9formatterAA10Formatting_pvp"></a>
-                    <a name="//apple_ref/swift/Property/formatter" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC9formatterAA10Formatting_pvp">formatter</a>
+                    <a name="/s:4acho5StateC7optionsACyxGSayxG_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho5StateC7optionsACyxGSayxG_tcfc">init(options:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -182,76 +182,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Formatter instance.</p>
+                        <p>Initializes the state.</p>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">formatter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Formatting.html">Formatting</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
-                    <a name="/s:4acho4AchoCACyxGycfc"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoCACyxGycfc">init()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Public constructor that takes no arguments</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h5>Declaration</h5>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
-                    <a name="/s:4acho4AchoC18terminalController9keyReader9formatterACyxGAA19TerminalControlling_p_AA10KeyReading_pAA10Formatting_ptcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(terminalController:keyReader:formatter:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC18terminalController9keyReader9formatterACyxGAA19TerminalControlling_p_AA10KeyReading_pAA10Formatting_ptcfc">init(terminalController:keyReader:formatter:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initialize the class with its attributes</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h5>Declaration</h5>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">terminalController</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TerminalControlling.html">TerminalControlling</a></span><span class="p">,</span>
-     <span class="nv">keyReader</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KeyReading.html">KeyReading</a></span><span class="p">,</span>
-     <span class="nv">formatter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Formatting.html">Formatting</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">C</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -259,81 +197,6 @@
                         <h5>Parameters</h5>
                         <table class="graybox">
                           <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>terminalController</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Terminal controller.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>keyReader</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Instance to subscribe to key events.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="slightly-smaller">
-                        
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
-                    <a name="/s:4acho4AchoC3ask8question7optionsxSgSS_SayxGtF"></a>
-                    <a name="//apple_ref/swift/Method/ask(question:options:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4acho4AchoC3ask8question7optionsxSgSS_SayxGtF">ask(question:options:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Prints the question and the options in the terminal and subscribes to key events
-to move the selection up and down. When the user presses enter, it returns
-the selected option.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h5>Declaration</h5>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">ask</span><span class="p">(</span><span class="nv">question</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">C</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">C</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h5>Parameters</h5>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>question</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Question to be asked.</p>
-                                </div>
-                              </td>
-                            </tr>
                             <tr>
                               <td>
                                 <code>
@@ -342,16 +205,148 @@ the selected option.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>List of options.</p>
+                                  <p>List of options the user can select from.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:4acho5StateC7currentxyF"></a>
+                    <a name="//apple_ref/swift/Method/current()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho5StateC7currentxyF">current()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the currently selected option.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">current</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">C</span></code></pre>
+
+                        </div>
+                      </div>
                       <div>
                         <h5>Return Value</h5>
-                        <p>Selectd option (if any).</p>
+                        <p>The option at the current index.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:4acho5StateC2upyyF"></a>
+                    <a name="//apple_ref/swift/Method/up()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho5StateC2upyyF">up()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Move the selected line one line up.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">up</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Return Value</h5>
+                        <p>The output lines.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:4acho5StateC4downyyF"></a>
+                    <a name="//apple_ref/swift/Method/down()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho5StateC4downyyF">down()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Move the selected line one line down.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">down</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Return Value</h5>
+                        <p>The output lines.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:4acho5StateC6outputSayx_SbtGyF"></a>
+                    <a name="//apple_ref/swift/Method/output()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4acho5StateC6outputSayx_SbtGyF">output()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the terminal output for the given state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">output</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[(</span><span class="kt">C</span><span class="p">,</span> <span class="kt">Bool</span><span class="p">)]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Return Value</h5>
+                        <p>Output lines.</p>
                       </div>
                       <div class="slightly-smaller">
                         

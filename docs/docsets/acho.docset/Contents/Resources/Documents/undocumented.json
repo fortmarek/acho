@@ -1,6 +1,40 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/pedropinera/src/github.com/tuist/acho/Sources/acho/KeyReader.swift",
+      "line": 10,
+      "symbol": "KeyEvent.up",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pedropinera/src/github.com/tuist/acho/Sources/acho/KeyReader.swift",
+      "line": 11,
+      "symbol": "KeyEvent.down",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pedropinera/src/github.com/tuist/acho/Sources/acho/KeyReader.swift",
+      "line": 12,
+      "symbol": "KeyEvent.exit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pedropinera/src/github.com/tuist/acho/Sources/acho/KeyReader.swift",
+      "line": 13,
+      "symbol": "KeyEvent.select",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pedropinera/src/github.com/tuist/acho/Sources/acho/KeyReader.swift",
+      "line": 25,
+      "symbol": "KeyReader",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/pedropinera/src/github.com/tuist/acho"
 }
