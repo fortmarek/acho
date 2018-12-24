@@ -12,8 +12,13 @@ protocol TerminalControlling {
     ///
     /// - Parameter string: String to print.
     func write(_ string: String)
+
+    /// Clears the current line and moves the cursor to the beginning of the line
+    func clearLine()
 }
 
+// http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html
+// http://www.climagic.org/mirrors/VT100_Escape_Codes.html
 extension TerminalController: TerminalControlling {
     /// Writes the given string in the terminal.
     ///

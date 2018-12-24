@@ -4,16 +4,16 @@ import Foundation
 /// Acho stub
 fileprivate struct Stub<C: CustomStringConvertible & Hashable>: Hashable {
     let question: String
-    let items: [C]
+    let options: [C]
 
-    init(question: String, items: [C]) {
+    init(question: String, options: [C]) {
         self.question = question
-        self.items = items
+        self.options = options
     }
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(question)
-        hasher.combine(items)
+        hasher.combine(options)
     }
 }
 
@@ -29,12 +29,12 @@ public class MockAcho<C: CustomStringConvertible & Hashable>: AchoProtocol {
     ///   - items: Question items to be stubbed.
     ///   - with: Response for the given question & items
     public func stub(question: String, items: [C], with: C?) {
-        let stub: Stub<C> = Stub(question: question, items: items)
+        let stub: Stub<C> = Stub(question: question, options: items)
         stubs[stub] = with
     }
 
-    public func ask(question: String, items: [C]) -> C? {
-        let stub: Stub<C> = Stub(question: question, items: items)
+    public func ask(question: String, options: [C]) -> C? {
+        let stub: Stub<C> = Stub(question: question, options: options)
         return stubs[stub]
     }
 }
