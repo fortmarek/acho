@@ -1,5 +1,7 @@
 import acho
 import Foundation
 
-let acho = Acho(question: "Que pasa?", items: ["Item 1", "Item 2"])
-print(acho.ask())
+let simulators = ["iPhone 10", "iPhone 7" ]
+let acho = Acho(question: "In which simulator would you like to run the app?",
+                items: simulators)
+let simulator = acho.ask()
