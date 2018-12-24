@@ -15,8 +15,6 @@ protocol TerminalControlling {
 
     /// Clears the current line and moves the cursor to the beginning of the line
     func clearLine()
-
-    func moveCursor(down: Int)
 }
 
 // http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html
@@ -27,10 +25,5 @@ extension TerminalController: TerminalControlling {
     /// - Parameter string: String to print.
     func write(_ string: String) {
         write(string, inColor: .noColor, bold: false)
-    }
-
-    func moveCursor(down: Int) {
-        write("\u{001B}[\(down)B")
-        flush()
     }
 }
