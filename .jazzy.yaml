@@ -1,0 +1,13 @@
+author: Tuist
+module: acho
+github_url: https://github.com/tuist/acho
+copyright: 'Copyright © from 2018 Pedro Piñera Buendía. All rights reserved.'
+readme: ABOUT.md
+documentation: guides/*.md
+sdk: macosx
+xcodebuild_arguments:
+  - -project
+  - acho.xcodeproj
+  - -scheme
+  - acho-Package
+skip_undocumented: true
