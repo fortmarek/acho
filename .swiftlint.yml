@@ -1,0 +1,16 @@
+included:
+  - Sources
+excluded:
+  - Tests
+  - .build
+disabled_rules:
+  - trailing_whitespace
+  - nesting
+  - cyclomatic_complexity
+  - file_length
+  - todo
+  - function_parameter_count
+  - function_body_length
+line_length:
+  warning: 150
+  error: 170

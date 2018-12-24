@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  build:
+    macos:
+      xcode: '10.1.0'
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - 1-gems-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install Tools
+          command: |
+            brew install swiftlint
+            bundle config build.sqlite3 --with-sqlite3-dir=/opt/local
+      - run:
+          name: Install dependencies
+          command: |
+            bundle check || bundle install --path vendor/bundle
+      - run:
+          name: Run Danger
+          command: bundle exec danger
+      - run:
+          name: Install Tools
+          command: |
+            brew install swiftlint
+      - run:
+          name: Generate Xcode project
+          command: |
+            swift package generate-xcodeproj
+      - run:
+          name: Build for release
+          command: |
+            swift build -c release
+      - run:
+          name: Run tests
+          command: xcodebuild test -scheme Simulator-Package -project Simulator.xcodeproj -enableCodeCoverage YES
+      - run:
+          name: Send test coverage report
+          command: bash <(curl -s https://codecov.io/bash)
+      - save_cache:
+          key: gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
