@@ -9,7 +9,7 @@ let package = Package(
       .library(name: "achoTesting", targets: ["achoTesting"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-package-manager.git", .revision("a107d28d1b40491cf505799a046fee53e7c422e1")),
+        .package(url: "https://github.com/apple/swift-package-manager.git", .exact("0.3.0")),
         .package(url: "https://github.com/mtynior/ColorizeSwift.git", .upToNextMinor(from: "1.2.0")),
     ],
     targets: [
