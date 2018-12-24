@@ -32,10 +32,10 @@ class KeyReader: KeyReading {
         var char: UInt8 = 0
 
         while read(fileHandle.fileDescriptor, &char, 1) == 1 {
-            if char == 0x6A || char == 0x42 { // down
-                subscriber(.down)
-            } else if char == 0x6B || char == 0x41 { // up
+            if char == 0x6A || char == 0x42 { // up
                 subscriber(.up)
+            } else if char == 0x6B || char == 0x41 { // down
+                subscriber(.down)
             } else if char == 0x0A { // enter
                 subscriber(.select)
                 break
