@@ -3,6 +3,9 @@ import Foundation
 
 /// It represents the state of the prompt.
 class AchoState<C: CustomStringConvertible & Hashable> {
+    /// Amount of elements shown
+    let span: Int = 5
+
     /// Prompt question.
     let question: String
 
@@ -61,7 +64,11 @@ class AchoState<C: CustomStringConvertible & Hashable> {
     func output() -> [String] {
         var output: [String] = []
         output.append("\(question) \("(Choose with ↑ ↓ ⏎)".yellow())")
-        for i in 0 ..< items.count {
+
+        let lowerIndex = (index + span < items.count) ? index : items.count - 1 - span
+        let upperIndex = (index + span < items.count) ? index + span : items.count - 1
+
+        for i in lowerIndex ... upperIndex {
             let isCurrent = i == index
             let prefix = isCurrent ? "> " : "  "
             let item = "\(prefix)\(i). \(items[i].description)"

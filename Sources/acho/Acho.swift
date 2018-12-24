@@ -54,25 +54,48 @@ public final class Acho<C: CustomStringConvertible & Hashable>: AchoProtocol {
         precondition(items.count > 1, "there should be at least one item")
 
         let state = AchoState(question: question, items: items)
-        state.output().forEach({ terminalController.write("\($0)\n") })
+        print(output: state.output(), first: true)
         var selectedItem: C?
 
         keyReader.subscribe { event in
             switch event {
             case .down:
-                let output = state.down()
-                terminalController.moveCursor(up: output.count)
-                output.forEach({ terminalController.write("\($0)\n") })
+                print(output: state.down())
             case .up:
-                let output = state.up()
-                terminalController.moveCursor(up: output.count)
-                output.forEach({ terminalController.write("\($0)\n") })
+                print(output: state.up())
             case .select:
                 selectedItem = state.select()
             case .exit:
                 break
             }
         }
+
+        clear(lines: items.count)
         return selectedItem
+    }
+
+    /// Clears the last n lines from the terminal.
+    ///
+    /// - Parameter lines: Number of lines to be cleared.
+    fileprivate func clear(lines: Int) {
+        for _ in 0 ... lines {
+            terminalController.moveCursor(up: 1)
+            terminalController.clearLine()
+        }
+    }
+
+    /// Prints the state output in the terminal.
+    ///
+    /// - Parameters:
+    ///   - output: Output to be printed.
+    ///   - first: True if it's the first print.
+    fileprivate func print(output: [String], first: Bool = false) {
+        if !first {
+            terminalController.moveCursor(up: output.count)
+        }
+        output.forEach({
+            terminalController.clearLine()
+            terminalController.write("\($0)\n")
+        })
     }
 }
