@@ -35,6 +35,14 @@ let package = Package(
 )
 ```
 
+### Using Marathon
+
+If you want to use Acho in a [Marathon](https://github.com/johnsundell/marathon) script, either add it to your `Marathonfile` (see the Marathon repo for instructions on how to do that), or point Marathon to Acho using the inline dependency syntax:
+
+```swift
+import Acho // https://github.com/tuist/acho.git
+```
+
 ## Usage 🚀
 
 Create an instance of `Acho` passing the question and the options. The options need to conform both the protocol `CustomStringConvertible` and `Hashable`:
