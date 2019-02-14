@@ -10,10 +10,6 @@ Acho is a Swift library to generate interactive CLI prompts.
 [![Code Coverage](https://codecov.io/gh/tuist/acho/branch/master/graph/badge.svg)](https://codecov.io/gh/tuist/acho)
 [![Slack](http://slack.tuist.io/badge.svg)](http://slack.tuist.io/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/tuist/acho/blob/master/LICENSE.md)
-[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/pepibumur)
-<img src="https://opencollective.com/tuistapp/tiers/backer/badge.svg?label=backer&color=brightgreen" />
-<img src="https://opencollective.com/tuistapp/tiers/sponsor/badge.svg?label=sponsor&color=brightgreen" />
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/tuist)
 
 ## Install 🛠
 
