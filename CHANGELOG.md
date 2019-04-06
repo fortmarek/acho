@@ -4,6 +4,12 @@ Please, check out guidelines: https://keepachangelog.com/en/1.0.0/
 
 ## next version
 
+## 0.3.0
+
+### Changed
+
+- Upgrade library for Swift 5 and drop support for Swift 4.2.1 by @pepibumur.
+
 ## 0.2.0
 
 ### Added

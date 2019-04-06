@@ -21,7 +21,7 @@ Add the dependency in your `Package.swift` file:
 let package = Package(
     name: "myproject",
     dependencies: [
-        .package(url: "https://github.com/tuist/acho.git", .upToNextMajor(from: "6.2.0")),
+        .package(url: "https://github.com/tuist/acho.git", .upToNextMajor(from: "0.2.0")),
         ],
     targets: [
         .target(

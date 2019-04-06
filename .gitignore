@@ -86,7 +86,7 @@ fastlane/test_output
 
 # End of https://www.gitignore.io/api/swift,macos
 
-Simulator.xcodeproj
+acho.xcodeproj
 .byebug_history
 *.xcarchive
 tmp/

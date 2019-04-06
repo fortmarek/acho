@@ -6,17 +6,26 @@
         "repositoryURL": "https://github.com/mtynior/ColorizeSwift.git",
         "state": {
           "branch": null,
-          "revision": "16cb4545a54311ca29d314fa3b907296285cfde9",
-          "version": "1.2.0"
+          "revision": "7492d039d594daccc39cacea343eed6cc9d1ed5a",
+          "version": null
+        }
+      },
+      {
+        "package": "llbuild",
+        "repositoryURL": "https://github.com/apple/swift-llbuild.git",
+        "state": {
+          "branch": "master",
+          "revision": "875705e0943905b1f2cb5e37ea6d762467b1efa6",
+          "version": null
         }
       },
       {
         "package": "SwiftPM",
-        "repositoryURL": "https://github.com/apple/swift-package-manager.git",
+        "repositoryURL": "https://github.com/apple/swift-package-manager",
         "state": {
           "branch": null,
-          "revision": "235aacc514cb81a6881364b0fedcb3dd083228f3",
-          "version": "0.3.0"
+          "revision": "a107d28d1b40491cf505799a046fee53e7c422e1",
+          "version": null
         }
       }
     ]

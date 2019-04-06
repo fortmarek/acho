@@ -1,6 +1,6 @@
 # Releasing
 
-In this documents you'll find all the necessary steps to release a new version of `Simulator`.
+In this documents you'll find all the necessary steps to release a new version of `Acho`.
 
 > Although some of the steps have been automated, there are some of them that need to be executed manually.
 
