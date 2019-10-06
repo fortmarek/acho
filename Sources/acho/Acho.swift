@@ -29,7 +29,7 @@ public final class Acho<C: CustomStringConvertible & Hashable>: AchoProtocol {
 
     /// Public constructor that takes no arguments
     public convenience init() {
-        let controller = TerminalController(stream: stdoutStream as! LocalFileOutputByteStream)!
+        let controller = TerminalController(stream: stdoutStream)!
         self.init(terminalController: controller,
                   keyReader: KeyReader(),
                   formatter: Formatter())
