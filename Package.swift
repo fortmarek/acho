@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         .target(
             name: "acho",
-            dependencies: ["Utility", "ColorizeSwift"]
+            dependencies: ["SPMUtility", "ColorizeSwift"]
         ),
         .target(
             name: "cli",
