@@ -29,6 +29,9 @@ class KeyReader: KeyReading {
     func subscribe(subscriber: @escaping (KeyEvent) -> Void) {
         let fileHandle = FileHandle.standardInput
         let originalTerm = enableRawMode(fileHandle: fileHandle)
+        defer {
+            restoreRawMode(fileHandle: fileHandle, originalTerm: originalTerm)
+        }
         var char: UInt8 = 0
 
         while read(fileHandle.fileDescriptor, &char, 1) == 1 {
@@ -39,14 +42,10 @@ class KeyReader: KeyReading {
             } else if char == 0x0A { // enter
                 subscriber(.select)
                 break
-            } else if char == 0x04 || char == 0x71 || char == 0x1B { // detect EOF (Ctrl+D)
+            } else if char == 0x04 { // detect EOF (Ctrl+D)
                 subscriber(.exit)
                 break
             }
-        }
-
-        defer {
-            restoreRawMode(fileHandle: fileHandle, originalTerm: originalTerm)
         }
     }
 
