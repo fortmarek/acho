@@ -9,8 +9,8 @@ let package = Package(
         .library(name: "achoTesting", targets: ["achoTesting"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-package-manager", .branch("swift-5.0-RELEASE")), 
-        .package(url: "https://github.com/mtynior/ColorizeSwift.git", .revision("7492d039d594daccc39cacea343eed6cc9d1ed5a")),
+		.package(url: "https://github.com/tuist/tuist.git", .upToNextMajor(from: "0.18.1")),
+		.package(url: "https://github.com/mtynior/ColorizeSwift.git", .revision("7492d039d594daccc39cacea343eed6cc9d1ed5a")),
     ],
     targets: [
         .target(
